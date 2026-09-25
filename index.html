@@ -12,7 +12,9 @@
 
     <main class="container">
 
-        <section class="hero">
+        <!-- Welcome Screen -->
+
+        <section class="hero" id="welcome-screen">
 
             <h1>Parts of Speech Mastery</h1>
 
@@ -21,13 +23,53 @@
                 by understanding the job each word does in a sentence.
             </p>
 
-            <a href="#" class="start-button">
+            <button class="start-button" onclick="startPractice()">
                 Start Practice
-            </a>
+            </button>
+
+        </section>
+
+
+        <!-- Practice Screen -->
+
+        <section class="hero" id="practice-screen" style="display: none;">
+
+            <p>Question 1</p>
+
+            <h2 id="sentence">
+                The students study every evening.
+            </h2>
+
+            <p>What is the part of speech of <strong>study</strong>?</p>
+
+            <div class="answers">
+
+                <button onclick="checkAnswer('Noun')">
+                    Noun
+                </button>
+
+                <button onclick="checkAnswer('Verb')">
+                    Verb
+                </button>
+
+                <button onclick="checkAnswer('Adjective')">
+                    Adjective
+                </button>
+
+                <button onclick="checkAnswer('Adverb')">
+                    Adverb
+                </button>
+
+            </div>
+
+            <p id="feedback"></p>
 
         </section>
 
     </main>
+
+
+    <script src="script.js"></script>
 
 </body>
 </html>
