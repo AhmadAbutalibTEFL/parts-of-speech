@@ -178,10 +178,10 @@ function startPractice() {
 
     showQuestion();
 
-    document.getElementById("practice-screen").scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
+window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+});
 }
 function exitPractice() {
     currentQuestion = 0;
