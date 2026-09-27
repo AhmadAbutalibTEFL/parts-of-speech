@@ -158,3 +158,55 @@ body {
     gap: 15px;
     flex-wrap: wrap;
 }
+
+/* ===== Mobile Layout ===== */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 25px 15px;
+    }
+
+    .hero {
+        padding: 35px 20px;
+        border-radius: 16px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .parts-container {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin: 25px 0;
+    }
+
+    .part-card {
+        padding: 20px;
+    }
+
+    .part-card h3 {
+        font-size: 22px;
+    }
+
+    .answers {
+        grid-template-columns: 1fr;
+    }
+
+    .home-buttons,
+    .results-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .start-button,
+    .secondary-button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
