@@ -159,6 +159,34 @@ body {
     flex-wrap: wrap;
 }
 
+/* ===== Secondary Button ===== */
+
+.secondary-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: white;
+    color: #2563eb;
+    border: 2px solid #2563eb;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.secondary-button:hover {
+    background: #eff6ff;
+}
+
+
+/* ===== Results Buttons ===== */
+
+.results-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
 /* ===== Mobile Layout ===== */
 
 @media (max-width: 600px) {
