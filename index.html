@@ -30,42 +30,84 @@
         </section>
 
 
-        <!-- Practice Screen -->
+<!-- Practice Screen -->
 
-        <section class="hero" id="practice-screen" style="display: none;">
+<section class="hero" id="practice-screen" style="display: none;">
 
-            <p>Question 1</p>
+    <p id="question-number">Question 1 of 8</p>
 
-            <h2 id="sentence">
-                The students study every evening.
-            </h2>
+    <h2 id="sentence">
+        The students study every evening.
+    </h2>
 
-            <p>What is the part of speech of <strong>study</strong>?</p>
+    <p>
+        What is the part of speech of
+        <strong id="target-word">study</strong>?
+    </p>
 
-            <div class="answers">
 
-                <button onclick="checkAnswer('Noun')">
-                    Noun
-                </button>
+    <div class="answers">
 
-                <button onclick="checkAnswer('Verb')">
-                    Verb
-                </button>
+        <button class="answer-button" onclick="checkAnswer('Noun')">
+            Noun
+        </button>
 
-                <button onclick="checkAnswer('Adjective')">
-                    Adjective
-                </button>
+        <button class="answer-button" onclick="checkAnswer('Verb')">
+            Verb
+        </button>
 
-                <button onclick="checkAnswer('Adverb')">
-                    Adverb
-                </button>
+        <button class="answer-button" onclick="checkAnswer('Pronoun')">
+            Pronoun
+        </button>
 
-            </div>
+        <button class="answer-button" onclick="checkAnswer('Preposition')">
+            Preposition
+        </button>
 
-            <p id="feedback"></p>
+        <button class="answer-button" onclick="checkAnswer('Conjunction')">
+            Conjunction
+        </button>
 
-        </section>
+        <button class="answer-button" onclick="checkAnswer('Adverb')">
+            Adverb
+        </button>
 
+        <button class="answer-button" onclick="checkAnswer('Adjective')">
+            Adjective
+        </button>
+
+    </div>
+
+
+    <p id="feedback"></p>
+
+
+    <button
+        id="next-button"
+        class="start-button"
+        onclick="nextQuestion()"
+        style="display: none;">
+        Next Question
+    </button>
+
+</section>
+        <!-- Results Screen -->
+
+<section class="hero" id="results-screen" style="display: none;">
+
+    <h2>Quiz Complete!</h2>
+
+    <p>Your score:</p>
+
+    <div id="score" class="score">
+        0 / 8
+    </div>
+
+    <button class="start-button" onclick="restartQuiz()">
+        Try Again
+    </button>
+
+</section>
     </main>
 
 
