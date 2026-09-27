@@ -294,13 +294,31 @@ document.getElementById("sentence").innerHTML = highlightedSentence;
 document.getElementById("progress-bar").style.width =
     progress + "%";
 
-    document.getElementById("next-button").style.display = "none";
+document.getElementById("next-button").style.display = "none";
 
-    document.querySelectorAll(".answer-button").forEach(button => {
-        button.disabled = false;
-    });
+renderAnswerButtons(question.choices);
 }
 
+function renderAnswerButtons(choices) {
+
+    const container = document.getElementById("answers");
+
+    container.innerHTML = "";
+
+    choices.forEach(choice => {
+
+        const button = document.createElement("button");
+
+        button.className = "answer-button";
+        button.textContent = choice;
+
+        button.onclick = function () {
+            checkAnswer(choice);
+        };
+
+        container.appendChild(button);
+    });
+}
 
 // ===== Check the Answer =====
 
