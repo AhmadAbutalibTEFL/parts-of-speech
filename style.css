@@ -229,6 +229,23 @@ body {
     font-size: 20px;
 }
 
+    .strategy-step {
+    padding: 15px;
+}
+
+.strategy-example {
+    padding: 18px;
+}
+
+.strategy-sentence {
+    font-size: 19px !important;
+}
+
+.strategy-buttons {
+    flex-direction: column;
+    align-items: stretch;
+}
+    
     /* ===== Learn Mode ===== */
 
     .parts-container {
@@ -338,4 +355,80 @@ body {
 #sentence strong {
     font-weight: 700;
     text-decoration: underline;
+}
+
+/* ===== Strategy Mode ===== */
+
+.strategy-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 30px 0;
+    text-align: left;
+}
+
+.strategy-step {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    padding: 18px;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+.strategy-number {
+    min-width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #2563eb;
+    color: white;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.strategy-step h3 {
+    margin: 0 0 6px;
+    font-size: 19px;
+}
+
+.strategy-step p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.strategy-question {
+    font-size: 20px !important;
+    font-weight: bold;
+}
+
+.strategy-example {
+    margin: 30px 0;
+    padding: 25px;
+    background: #f8fafc;
+    border: 2px solid #e5e7eb;
+    border-radius: 14px;
+}
+
+.strategy-example h3 {
+    margin-top: 0;
+}
+
+.strategy-sentence {
+    font-size: 21px !important;
+    line-height: 1.5;
+}
+
+.strategy-answer {
+    font-weight: bold;
+}
+
+.strategy-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
