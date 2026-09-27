@@ -161,13 +161,22 @@ function backToHome() {
 // ===== Start the Quiz =====
 
 function startPractice() {
+    currentQuestion = 0;
+    score = 0;
 
     document.getElementById("welcome-screen").style.display = "none";
+    document.getElementById("learn-screen").style.display = "none";
+    document.getElementById("results-screen").style.display = "none";
     document.getElementById("practice-screen").style.display = "block";
 
     showQuestion();
 }
 
+function exitPractice() {
+    currentQuestion = 0;
+    score = 0;
+    backToHome();
+}
 
 // ===== Show a Question =====
 
