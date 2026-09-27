@@ -239,6 +239,10 @@ function checkAnswer(answer) {
 
 
     document.getElementById("next-button").style.display = "inline-block";
+    document.getElementById("feedback").scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+});
 }
 
 
