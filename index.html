@@ -25,13 +25,19 @@
 
 <div class="home-buttons">
 
-    <button class="start-button" onclick="showLearnMode()">
-        📚 Learn
-    </button>
-
-    <button class="start-button" onclick="startPractice()">
+  <button class="start-button" onclick="startPractice()">
         🎯 Practice
     </button>
+    
+    <button class="start-button" onclick="showLearnMode()">
+        📚 Learn the Parts of Speech
+    </button>
+
+    <button class="secondary-button" onclick="showStrategyMode()">
+    🧠 Learn the Strategy
+</button>
+
+  
 
 </div>
 
@@ -53,6 +59,102 @@
     <button class="start-button" onclick="backToHome()">
         ← Back to Home
     </button>
+
+</section>
+
+        <!-- Strategy Screen -->
+
+<section class="hero" id="strategy-screen" style="display: none;">
+
+    <h2>How to Identify a Part of Speech</h2>
+
+    <p>
+        Don't identify a word by itself.
+        Look at the word in the sentence.
+    </p>
+
+    <div class="strategy-steps">
+
+        <div class="strategy-step">
+            <div class="strategy-number">1</div>
+            <div>
+                <h3>Read the whole sentence</h3>
+                <p>
+                    Read the sentence first. Look at the complete idea.
+                </p>
+            </div>
+        </div>
+
+        <div class="strategy-step">
+            <div class="strategy-number">2</div>
+            <div>
+                <h3>Look at the target word</h3>
+                <p>
+                    Look at the word and the words around it.
+                </p>
+            </div>
+        </div>
+
+        <div class="strategy-step">
+            <div class="strategy-number">3</div>
+            <div>
+                <h3>Ask the key question</h3>
+                <p class="strategy-question">
+                    “What job does this word do?”
+                </p>
+            </div>
+        </div>
+
+        <div class="strategy-step">
+            <div class="strategy-number">4</div>
+            <div>
+                <h3>Choose the part of speech</h3>
+                <p>
+                    Use the word's job in the sentence to identify it.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="strategy-example">
+
+        <h3>Let's try one</h3>
+
+        <p class="strategy-sentence">
+            The students <strong>study</strong> every evening.
+        </p>
+
+        <p>
+            <strong>Target word:</strong> study
+        </p>
+
+        <p>
+            What job does <strong>study</strong> do?
+        </p>
+
+        <p class="strategy-answer">
+            It shows an action.
+        </p>
+
+        <p>
+            Therefore, <strong>study</strong> is a
+            <strong>verb</strong>.
+        </p>
+
+    </div>
+
+    <div class="strategy-buttons">
+
+        <button class="start-button" onclick="startPractice()">
+            Try It Yourself →
+        </button>
+
+        <button class="secondary-button" onclick="backToHome()">
+            ← Back to Home
+        </button>
+
+    </div>
 
 </section>
         
