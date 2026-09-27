@@ -191,50 +191,101 @@ body {
 
 @media (max-width: 600px) {
 
+    body {
+        font-size: 16px;
+    }
+
     .container {
-        padding: 25px 15px;
+        padding: 18px 12px;
     }
 
     .hero {
-        padding: 35px 20px;
+        padding: 28px 16px;
         border-radius: 16px;
     }
 
     .hero h1 {
-        font-size: 34px;
+        font-size: 32px;
+        line-height: 1.15;
+        margin-bottom: 12px;
+    }
+
+    .hero h2 {
+        font-size: 26px;
+        line-height: 1.25;
+        margin-top: 0;
     }
 
     .hero p {
         font-size: 17px;
+        line-height: 1.5;
     }
 
+    /* ===== Learn Mode ===== */
+
     .parts-container {
+        display: grid;
         grid-template-columns: 1fr;
-        gap: 14px;
-        margin: 25px 0;
+        gap: 12px;
+        margin: 24px 0;
     }
 
     .part-card {
-        padding: 20px;
+        padding: 18px;
+        border-radius: 12px;
     }
 
     .part-card h3 {
         font-size: 22px;
+        margin-bottom: 10px;
     }
+
+    .part-card p {
+        font-size: 15px;
+        line-height: 1.55;
+        margin: 8px 0;
+    }
+
+    /* ===== Quiz ===== */
 
     .answers {
         grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 24px;
     }
+
+    .answer-button {
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    #sentence {
+        font-size: 21px;
+        line-height: 1.45;
+    }
+
+    /* ===== Buttons ===== */
 
     .home-buttons,
     .results-buttons {
         flex-direction: column;
         align-items: stretch;
+        gap: 10px;
     }
 
     .start-button,
     .secondary-button {
         width: 100%;
         box-sizing: border-box;
+        padding: 14px 20px;
+        font-size: 17px;
+    }
+
+    /* ===== Feedback ===== */
+
+    .feedback {
+        padding: 15px;
+        font-size: 16px;
+        line-height: 1.5;
     }
 }
