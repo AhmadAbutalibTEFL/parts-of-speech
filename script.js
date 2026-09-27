@@ -50,48 +50,127 @@ const questions = [
     {
         sentence: "The students study every evening.",
         targetWord: "study",
+        choices: [
+            "Noun",
+            "Verb",
+            "Pronoun",
+            "Preposition",
+            "Conjunction",
+            "Adverb",
+            "Adjective"
+        ],
         correctAnswer: "Verb",
         explanation: "Study is a verb because it shows an action."
     },
+
     {
         sentence: "The students study every evening.",
         targetWord: "students",
+        choices: [
+            "Noun",
+            "Verb",
+            "Pronoun",
+            "Preposition",
+            "Conjunction",
+            "Adverb",
+            "Adjective"
+        ],
         correctAnswer: "Noun",
         explanation: "Students is a noun because it names people."
     },
+
     {
         sentence: "They study every evening.",
         targetWord: "They",
+        choices: [
+            "Noun",
+            "Verb",
+            "Pronoun",
+            "Preposition",
+            "Conjunction",
+            "Adverb",
+            "Adjective"
+        ],
         correctAnswer: "Pronoun",
         explanation: "They is a pronoun because it takes the place of a noun."
     },
+
     {
         sentence: "The books are on the table.",
         targetWord: "on",
+        choices: [
+            "Noun",
+            "Verb",
+            "Pronoun",
+            "Preposition",
+            "Conjunction",
+            "Adverb",
+            "Adjective"
+        ],
         correctAnswer: "Preposition",
         explanation: "On is a preposition because it shows location."
     },
+
     {
         sentence: "I studied, but I was tired.",
         targetWord: "but",
+        choices: [
+            "Noun",
+            "Verb",
+            "Pronoun",
+            "Preposition",
+            "Conjunction",
+            "Adverb",
+            "Adjective"
+        ],
         correctAnswer: "Conjunction",
         explanation: "But is a conjunction because it connects ideas."
     },
+
     {
         sentence: "She walked slowly.",
         targetWord: "slowly",
+        choices: [
+            "Noun",
+            "Verb",
+            "Pronoun",
+            "Preposition",
+            "Conjunction",
+            "Adverb",
+            "Adjective"
+        ],
         correctAnswer: "Adverb",
         explanation: "Slowly is an adverb because it gives more information about the verb walked."
     },
+
     {
         sentence: "It was a cold morning.",
         targetWord: "cold",
+        choices: [
+            "Noun",
+            "Verb",
+            "Pronoun",
+            "Preposition",
+            "Conjunction",
+            "Adverb",
+            "Adjective"
+        ],
         correctAnswer: "Adjective",
         explanation: "Cold is an adjective because it gives information about the noun morning."
     },
+
     {
         sentence: "The teacher explained the rule.",
         targetWord: "explained",
+        choices: [
+            "Noun",
+            "Verb",
+            "Pronoun",
+            "Preposition",
+            "Conjunction",
+            "Adverb",
+            "Adjective"
+        ],
         correctAnswer: "Verb",
         explanation: "Explained is a verb because it shows an action."
     }
