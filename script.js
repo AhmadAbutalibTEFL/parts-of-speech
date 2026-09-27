@@ -172,12 +172,17 @@ function startPractice() {
 
     document.getElementById("welcome-screen").style.display = "none";
     document.getElementById("learn-screen").style.display = "none";
+    document.getElementById("strategy-screen").style.display = "none";
     document.getElementById("results-screen").style.display = "none";
     document.getElementById("practice-screen").style.display = "block";
 
     showQuestion();
-}
 
+    document.getElementById("practice-screen").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
 function exitPractice() {
     currentQuestion = 0;
     score = 0;
