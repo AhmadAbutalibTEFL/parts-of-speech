@@ -83,6 +83,11 @@ function showQuestion() {
         question.targetWord;
 
     document.getElementById("feedback").textContent = "";
+    const progress =
+    ((currentQuestion + 1) / questions.length) * 100;
+
+document.getElementById("progress-bar").style.width =
+    progress + "%";
 
     document.getElementById("next-button").style.display = "none";
 
