@@ -120,9 +120,6 @@
         Next Question
     </button>
 
-</section>
-        <!-- Results Screen -->
-
 <section class="hero" id="results-screen" style="display: none;">
 
     <h2>Quiz Complete!</h2>
@@ -133,9 +130,17 @@
         0 / 8
     </div>
 
-    <button class="start-button" onclick="restartQuiz()">
-        Try Again
-    </button>
+    <div class="results-buttons">
+
+        <button class="start-button" onclick="restartQuiz()">
+            Try Again
+        </button>
+
+        <button class="secondary-button" onclick="backToHome()">
+            ← Back to Home
+        </button>
+
+    </div>
 
 </section>
     </main>
