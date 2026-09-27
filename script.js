@@ -1,5 +1,51 @@
 // ===== Parts of Speech Quiz =====
 
+// ===== Parts of Speech Learning Content =====
+
+const partsOfSpeech = [
+    {
+        name: "Verb",
+        meaning: "An action or a state.",
+        examples: "be, have, seem, go, study, believe"
+    },
+
+    {
+        name: "Noun",
+        meaning: "A person, place, thing, or idea.",
+        examples: "bicycle, teacher, Chicago, idea, development"
+    },
+
+    {
+        name: "Pronoun",
+        meaning: "Takes the place of a noun.",
+        examples: "she, you, we, him, it, they"
+    },
+
+    {
+        name: "Preposition",
+        meaning: "Shows time or location.",
+        examples: "in, on, under, before, after, between"
+    },
+
+    {
+        name: "Conjunction",
+        meaning: "Connects words, phrases, or ideas.",
+        examples: "and, but, although, yet, because"
+    },
+
+    {
+        name: "Adverb",
+        meaning: "Gives more information about a verb, phrase, or another adverb.",
+        examples: "slowly, loudly, strongly"
+    },
+
+    {
+        name: "Adjective",
+        meaning: "Gives information about a noun or pronoun.",
+        examples: "large, pretty, interesting, solid, wide"
+    }
+];
+
 const questions = [
     {
         sentence: "The students study every evening.",
@@ -54,7 +100,63 @@ const questions = [
 
 let currentQuestion = 0;
 let score = 0;
+// ===== Learn Mode =====
 
+function showLearnMode() {
+
+    document.getElementById("welcome-screen").style.display = "none";
+
+    document.getElementById("practice-screen").style.display = "none";
+
+    document.getElementById("results-screen").style.display = "none";
+
+    document.getElementById("learn-screen").style.display = "block";
+
+    displayPartsOfSpeech();
+}
+
+
+function displayPartsOfSpeech() {
+
+    const container = document.getElementById("parts-container");
+
+    container.innerHTML = "";
+
+    partsOfSpeech.forEach(part => {
+
+        const card = document.createElement("div");
+
+        card.className = "part-card";
+
+        card.innerHTML = `
+            <h3>${part.name}</h3>
+
+            <p>
+                <strong>Meaning:</strong>
+                ${part.meaning}
+            </p>
+
+            <p>
+                <strong>Examples:</strong>
+                ${part.examples}
+            </p>
+        `;
+
+        container.appendChild(card);
+    });
+}
+
+
+function backToHome() {
+
+    document.getElementById("learn-screen").style.display = "none";
+
+    document.getElementById("practice-screen").style.display = "none";
+
+    document.getElementById("results-screen").style.display = "none";
+
+    document.getElementById("welcome-screen").style.display = "block";
+}
 
 // ===== Start the Quiz =====
 
