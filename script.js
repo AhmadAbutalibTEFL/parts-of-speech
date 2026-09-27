@@ -148,13 +148,10 @@ function displayPartsOfSpeech() {
 
 
 function backToHome() {
-
     document.getElementById("learn-screen").style.display = "none";
-
+    document.getElementById("strategy-screen").style.display = "none";
     document.getElementById("practice-screen").style.display = "none";
-
     document.getElementById("results-screen").style.display = "none";
-
     document.getElementById("welcome-screen").style.display = "block";
 }
 // ===== Learn the strategy =====
