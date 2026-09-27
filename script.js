@@ -187,8 +187,12 @@ function showQuestion() {
     document.getElementById("question-number").textContent =
         `Question ${currentQuestion + 1} of ${questions.length}`;
 
-    document.getElementById("sentence").textContent =
-        question.sentence;
+   const highlightedSentence = question.sentence.replace(
+    question.targetWord,
+    `<strong>${question.targetWord}</strong>`
+);
+
+document.getElementById("sentence").innerHTML = highlightedSentence;
 
     document.getElementById("target-word").textContent =
         question.targetWord;
