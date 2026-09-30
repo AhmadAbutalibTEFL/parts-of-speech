@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Parts of Speech Mastery</title>
+<title>Ahmad's English Platform</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,34 +14,40 @@
 
         <!-- Welcome Screen -->
 
-        <section class="hero" id="welcome-screen">
+     <!-- Course Hub -->
+<section class="hero" id="welcome-screen">
 
-            <h1>Parts of Speech Mastery</h1>
+    <h1>Ahmad's English Platform</h1>
 
-            <p>
-                Learn how to identify the seven parts of speech
-                by understanding the job each word does in a sentence.
-            </p>
+    <p>
+        Learn English. Prepare smarter. Build confidence.
+    </p>
 
-<div class="home-buttons">
+    <div id="courses-container" class="course-grid"></div>
 
-  <button class="start-button" onclick="startPractice()">
-        🎯 Practice
+</section>
+
+        <!-- EST Course Screen -->
+<section class="hero" id="est-course-screen" style="display: none;">
+
+    <div class="course-header">
+        <p class="course-label">COURSE</p>
+        <h2>EST Preparation</h2>
+
+        <p>
+            A structured preparation program combining Grammar,
+            Reading, and focused practice.
+        </p>
+    </div>
+
+    <div id="est-sessions-container" class="session-list"></div>
+
+    <button class="secondary-button" onclick="showCourseHub()">
+        ← Back to Courses
     </button>
-    
-    <button class="start-button" onclick="showLearnMode()">
-        📚 Learn the Parts of Speech
-    </button>
 
-    <button class="secondary-button" onclick="showStrategyMode()">
-    🧠 Learn the Strategy
-</button>
-
-  
-
-</div>
-
-        </section>
+</section>
+        
 
 <!-- Learn Screen -->
 
