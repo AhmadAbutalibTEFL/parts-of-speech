@@ -337,11 +337,7 @@ function backToHome() {
 }
 
 // ===== Learn the strategy =====
-function startPractice() {
-    currentQuestion = 0;
-    score = 0;
 
-    hideAllScreens();
 
     document.getElementById("practice-screen").style.display = "block";
 
@@ -359,19 +355,18 @@ function startPractice() {
     currentQuestion = 0;
     score = 0;
 
-    document.getElementById("welcome-screen").style.display = "none";
-    document.getElementById("learn-screen").style.display = "none";
-    document.getElementById("strategy-screen").style.display = "none";
-    document.getElementById("results-screen").style.display = "none";
+    hideAllScreens();
+
     document.getElementById("practice-screen").style.display = "block";
 
     showQuestion();
 
-window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-});
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
+
 function exitPractice() {
     currentQuestion = 0;
     score = 0;
