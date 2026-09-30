@@ -1,3 +1,110 @@
+const courses = [
+    {
+        id: "ela",
+        title: "ELA",
+        icon: "📚",
+        description: "English Language Arts: reading, writing, language, and literary skills.",
+        available: false
+    },
+    {
+        id: "digital-sat",
+        title: "Digital SAT",
+        icon: "🎯",
+        description: "Reading and Writing preparation organized by skills and difficulty.",
+        available: false
+    },
+    {
+        id: "est",
+        title: "EST",
+        icon: "📝",
+        description: "Structured EST preparation in Grammar, Reading, and Practice.",
+        available: true
+    },
+    {
+        id: "ielts",
+        title: "IELTS",
+        icon: "🌍",
+        description: "IELTS preparation for Listening, Reading, Writing, and Speaking.",
+        available: false
+    },
+    {
+        id: "toefl",
+        title: "TOEFL",
+        icon: "🎓",
+        description: "TOEFL preparation covering Reading, Listening, Speaking, and Writing.",
+        available: false
+    },
+    {
+        id: "general-english",
+        title: "General English",
+        icon: "💬",
+        description: "Build practical English skills for communication and everyday use.",
+        available: false
+    },
+    {
+        id: "young-learners",
+        title: "English for Young Learners",
+        icon: "🧩",
+        description: "Engaging English learning designed for younger learners.",
+        available: false
+    },
+    {
+        id: "teacher-training",
+        title: "Teacher Training",
+        icon: "👨‍🏫",
+        description: "Professional development for English language teachers.",
+        available: false
+    }
+];
+
+function displayCourses() {
+    const container = document.getElementById("courses-container");
+
+    container.innerHTML = "";
+
+    courses.forEach(course => {
+
+        const card = document.createElement("div");
+        card.className = "course-card";
+
+        if (course.available) {
+            card.classList.add("course-card-active");
+        } else {
+            card.classList.add("course-card-coming-soon");
+        }
+
+        card.innerHTML = `
+            <div class="course-icon">${course.icon}</div>
+
+            <h3>${course.title}</h3>
+
+            <p>${course.description}</p>
+
+            <span class="course-status">
+                ${course.available ? "Available" : "Coming Soon"}
+            </span>
+
+            <button class="${course.available ? "start-button" : "secondary-button"}">
+                ${course.available ? "Open Course →" : "Coming Soon"}
+            </button>
+        `;
+
+        const button = card.querySelector("button");
+
+        button.onclick = function () {
+            if (course.available) {
+                showESTCourse();
+            } else {
+                showComingSoon(course.title);
+            }
+        };
+
+        container.appendChild(card);
+    });
+}
+
+
+
 // ===== Parts of Speech Quiz =====
 
 // ===== Parts of Speech Learning Content =====
@@ -182,18 +289,17 @@ let score = 0;
 // ===== Learn Mode =====
 
 function showLearnMode() {
-
-    document.getElementById("welcome-screen").style.display = "none";
-
-    document.getElementById("practice-screen").style.display = "none";
-
-    document.getElementById("results-screen").style.display = "none";
+    hideAllScreens();
 
     document.getElementById("learn-screen").style.display = "block";
 
     displayPartsOfSpeech();
-}
 
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
 
 function displayPartsOfSpeech() {
 
@@ -227,20 +333,24 @@ function displayPartsOfSpeech() {
 
 
 function backToHome() {
-    document.getElementById("learn-screen").style.display = "none";
-    document.getElementById("strategy-screen").style.display = "none";
-    document.getElementById("practice-screen").style.display = "none";
-    document.getElementById("results-screen").style.display = "none";
-    document.getElementById("welcome-screen").style.display = "block";
+    showCourseHub();
 }
-// ===== Learn the strategy =====
-function showStrategyMode() {
 
-    document.getElementById("welcome-screen").style.display = "none";
-    document.getElementById("learn-screen").style.display = "none";
-    document.getElementById("practice-screen").style.display = "none";
-    document.getElementById("results-screen").style.display = "none";
-    document.getElementById("strategy-screen").style.display = "block";
+// ===== Learn the strategy =====
+function startPractice() {
+    currentQuestion = 0;
+    score = 0;
+
+    hideAllScreens();
+
+    document.getElementById("practice-screen").style.display = "block";
+
+    showQuestion();
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 
 // ===== Start the Quiz =====
@@ -401,3 +511,193 @@ function restartQuiz() {
 
     showQuestion();
 }
+
+
+function hideAllScreens() {
+    const screens = document.querySelectorAll(".hero");
+
+    screens.forEach(screen => {
+        screen.style.display = "none";
+    });
+}
+
+
+function showCourseHub() {
+    hideAllScreens();
+
+    document.getElementById("welcome-screen").style.display = "block";
+
+    displayCourses();
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+function showESTCourse() {
+    hideAllScreens();
+
+    document.getElementById("est-course-screen").style.display = "block";
+
+    displayESTSessions();
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+function showComingSoon(courseName) {
+    alert(`${courseName} is coming soon.`);
+}
+
+displayCourses();
+
+/* =========================
+   COURSE HUB
+   ========================= */
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+.course-card {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 28px;
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.course-card-active {
+    border: 2px solid #2563eb;
+}
+
+.course-icon {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.course-card h3 {
+    margin: 0 0 10px;
+    font-size: 25px;
+}
+
+.course-card p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+.course-status {
+    display: inline-block;
+    margin-bottom: 18px;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.course-card .start-button,
+.course-card .secondary-button {
+    width: 100%;
+}
+
+/* =========================
+   COURSE HEADER
+   ========================= */
+
+.course-header {
+    margin-bottom: 30px;
+}
+
+.course-label {
+    font-size: 13px !important;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px !important;
+}
+
+/* =========================
+   EST SESSION LIST
+   ========================= */
+
+.session-list {
+    display: grid;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.session-card {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 22px;
+    text-align: left;
+}
+
+.session-card-active {
+    border: 2px solid #2563eb;
+}
+
+.session-number {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.session-card h3 {
+    margin: 0 0 14px;
+    font-size: 21px;
+}
+
+.session-row {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.session-row strong {
+    display: inline-block;
+    min-width: 75px;
+}
+
+.session-button {
+    margin-top: 15px;
+}
+
+@media (max-width: 700px) {
+
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .course-card {
+        padding: 22px;
+    }
+
+    .course-card h3 {
+        font-size: 22px;
+    }
+
+    .session-card {
+        padding: 18px;
+    }
+
+}
+
