@@ -57,6 +57,196 @@ const courses = [
     }
 ];
 
+const estSessions = [
+    {
+        number: 1,
+        grammar: "Ice Breaking & Introduction",
+        reading: "Diagnostic Test",
+        practice: "—",
+        available: false
+    },
+    {
+        number: 2,
+        grammar: "Parts of Speech",
+        grammarPage: "p. 9",
+        reading: "Vocabulary in Context",
+        readingPage: "p. 43",
+        practice: "Drill Exercises",
+        available: true
+    },
+    {
+        number: 3,
+        grammar: "Is it Relevant? Adding, Deleting, and Revising",
+        grammarPage: "p. 16",
+        reading: "Making the Leap: From Concrete to Abstract",
+        readingPage: "p. 65",
+        practice: "Drill Exercises",
+        available: false
+    },
+    {
+        number: 4,
+        grammar: "Sentence and Paragraph Order",
+        grammarPage: "p. 31",
+        reading: "The Big Picture",
+        readingPage: "p. 79",
+        practice: "Drill Exercises",
+        available: false
+    },
+    {
+        number: 5,
+        grammar: "Infographics",
+        grammarPage: "p. 40",
+        reading: "Supporting Evidence",
+        readingPage: "p. 117",
+        practice: "Drill Exercises",
+        available: false
+    },
+    {
+        number: 6,
+        grammar: "Shorter is Better",
+        grammarPage: "p. 53",
+        reading: "Literal Comprehension: Same Idea, Different Words",
+        readingPage: "p. 137",
+        practice: "Drill Exercises",
+        available: false
+    },
+    {
+        number: 7,
+        grammar: "Diction, Idioms, and Register",
+        grammarPage: "p. 61",
+        reading: "Reasonable Inferences",
+        readingPage: "p. 158",
+        practice: "Drill Exercises",
+        available: false
+    },
+    {
+        number: 8,
+        grammar: "Sentences and Fragments",
+        grammarPage: "p. 71",
+        reading: "Extended Reasoning and Analysis",
+        readingPage: "p. 189",
+        practice: "Practice Test 2",
+        available: false
+    },
+    {
+        number: 9,
+        grammar: "Combining & Separating Sentences",
+        grammarPage: "p. 85",
+        reading: "Function Questions",
+        readingPage: "p. 204",
+        practice: "Drill Exercises",
+        available: false
+    },
+    {
+        number: 10,
+        grammar: "Cumulative Review",
+        reading: "Tone and Attitude",
+        readingPage: "p. 232",
+        practice: "—",
+        available: false
+    },
+    {
+        number: 11,
+        grammar: "Transitions",
+        grammarPage: "p. 95",
+        reading: "Rhetorical Strategy",
+        readingPage: "p. 255",
+        practice: "Drill Exercises",
+        available: false
+    },
+    {
+        number: 12,
+        grammar: "Non-Essential & Essential Clauses",
+        grammarPage: "p. 113",
+        reading: "Paired Passages",
+        readingPage: "p. 276",
+        practice: "Drill Exercises",
+        available: false
+    },
+    {
+        number: 13,
+        grammar: "Additional Comma Uses and Misuses",
+        grammarPage: "p. 134",
+        reading: "Graphics and Data Analysis",
+        readingPage: "p. 300",
+        practice: "Drill Exercises",
+        available: false
+    },
+    {
+        number: 14,
+        grammar: "Colons and Dashes",
+        grammarPage: "p. 139",
+        reading: "Question Marks",
+        readingPage: "p. 143",
+        practice: "—",
+        available: false
+    },
+    {
+        number: 15,
+        grammar: "Apostrophes: Plural vs. Possessive",
+        grammarPage: "p. 144",
+        reading: "Pronoun and Noun Agreement",
+        readingPage: "p. 153",
+        practice: "Drill Exercises",
+        available: false
+    },
+    {
+        number: 16,
+        grammar: "Verbs: Agreement and Tense",
+        grammarPage: "p. 170",
+        reading: "Word Pairs and Comparisons",
+        readingPage: "p. 193",
+        practice: "Practice Test 3",
+        available: false
+    },
+    {
+        number: 17,
+        grammar: "Parallel Structure",
+        grammarPage: "p. 200",
+        reading: "Dangling and Misplaced Modifiers",
+        readingPage: "p. 210",
+        practice: "Drill Exercises",
+        available: false
+    },
+    {
+        number: 18,
+        grammar: "Relative Pronouns",
+        grammarPage: "p. 218",
+        reading: "Cumulative Review: All Punctuation and Transitions",
+        readingPage: "p. 163",
+        practice: "Drill Exercises",
+        available: false
+    },
+    {
+        number: 19,
+        grammar: "Session details not provided",
+        reading: "Session details not provided",
+        practice: "—",
+        available: false
+    },
+    {
+        number: 20,
+        grammar: "English Practice Test 1",
+        reading: "Drill Exercises",
+        practice: "—",
+        available: false
+    },
+    {
+        number: 21,
+        grammar: "English Practice Test 2",
+        reading: "Drill Exercises",
+        practice: "—",
+        available: false
+    },
+    {
+        number: 22,
+        grammar: "More Practice Tests",
+        reading: "Practice Test 4",
+        practice: "—",
+        available: false
+    }
+];
+
 function displayCourses() {
     const container = document.getElementById("courses-container");
 
@@ -103,7 +293,65 @@ function displayCourses() {
     });
 }
 
+function displayESTSessions() {
+    const container = document.getElementById("est-sessions-container");
 
+    container.innerHTML = "";
+
+    estSessions.forEach(session => {
+
+        const card = document.createElement("div");
+        card.className = "session-card";
+
+        if (session.available) {
+            card.classList.add("session-card-active");
+        }
+
+        card.innerHTML = `
+            <div class="session-number">
+                Session ${session.number}
+            </div>
+
+            <h3>
+                ${session.available ? "Parts of Speech & Vocabulary in Context" : "EST Session " + session.number}
+            </h3>
+
+            <div class="session-row">
+                <strong>Grammar:</strong>
+                ${session.grammar}
+                ${session.grammarPage ? ` (${session.grammarPage})` : ""}
+            </div>
+
+            <div class="session-row">
+                <strong>Reading:</strong>
+                ${session.reading}
+                ${session.readingPage ? ` (${session.readingPage})` : ""}
+            </div>
+
+            <div class="session-row">
+                <strong>Practice:</strong>
+                ${session.practice}
+            </div>
+
+            <button
+                class="${session.available ? "start-button" : "secondary-button"} session-button">
+                ${session.available ? "Open Session →" : "Coming Soon"}
+            </button>
+        `;
+
+        const button = card.querySelector("button");
+
+        button.onclick = function () {
+            if (session.available && session.number === 2) {
+                showESTSession2();
+            } else {
+                showComingSoon(`EST Session ${session.number}`);
+            }
+        };
+
+        container.appendChild(card);
+    });
+}
 
 // ===== Parts of Speech Quiz =====
 
