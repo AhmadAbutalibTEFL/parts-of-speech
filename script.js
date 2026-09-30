@@ -338,10 +338,10 @@ function backToHome() {
 
 // ===== Learn the strategy =====
 
+function showStrategyMode() {
+    hideAllScreens();
 
-    document.getElementById("practice-screen").style.display = "block";
-
-    showQuestion();
+    document.getElementById("strategy-screen").style.display = "block";
 
     window.scrollTo({
         top: 0,
