@@ -569,3 +569,78 @@ body {
     }
 
 }
+
+/* =========================
+   SESSION COMPONENTS
+   ========================= */
+
+.session-components {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin: 30px 0;
+}
+
+.component-card {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 25px;
+    text-align: left;
+}
+
+.component-icon {
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.component-card h3 {
+    margin: 0 0 10px;
+    font-size: 22px;
+}
+
+.component-card p {
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.component-source {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 18px;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+}
+
+.component-card button {
+    width: 100%;
+}
+
+.session-navigation {
+    margin-top: 25px;
+}
+
+/* Active EST session */
+
+.session-card-active {
+    border: 2px solid #2563eb;
+}
+
+.session-card-active h3 {
+    color: #1d4ed8;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .session-components {
+        grid-template-columns: 1fr;
+    }
+
+    .component-card {
+        padding: 22px;
+    }
+
+}
