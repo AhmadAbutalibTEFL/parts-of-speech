@@ -792,6 +792,16 @@ function showESTCourse() {
     });
 }
 
+function showESTSession2() {
+    hideAllScreens();
+
+    document.getElementById("est-session-2-screen").style.display = "block";
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
 
 function showComingSoon(courseName) {
     alert(`${courseName} is coming soon.`);
