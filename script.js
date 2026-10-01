@@ -618,7 +618,7 @@ function startPractice() {
 function exitPractice() {
     currentQuestion = 0;
     score = 0;
-    backToHome();
+    showESTSession2();
 }
 
 // ===== Show a Question =====
